@@ -5,63 +5,32 @@ import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
-import Divider from '@mui/material/Divider';
-import InboxIcon from '@mui/icons-material/Inbox';
 import DraftsIcon from '@mui/icons-material/Drafts';
 import DashboardIcon from '@mui/icons-material/Dashboard';
 import PaymentIcon from '@mui/icons-material/Payment';
 import { Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, Link, TextField } from '@mui/material';
+import { red } from '@mui/material/colors';
 
 export default function BasicList() {
-  const [open, setOpen] = React.useState(false);
 
-  const handleClickOpen = () => {
-    setOpen(true);
-  };
 
-  const handleClose = () => {
-    setOpen(false);
-  };
 
   return (
-    <Box sx={{  width: '100%', maxWidth: 315, bgcolor: 'background.paper' }}>
+
+    <Box sx={{  width: '100%', minHeight:700 , maxWidth: 315, bgcolor:"#4615b2"}}>
       <nav aria-label="main mailbox folders ">
-        <List>
+      <img
+        src="/ext.png" // Replace with the actual URL of your image
+        alt="hello"
+        style={{ maxWidth: '100%', height: 'auto' }}
+      />
+        <List sx={{color:'white'}}>
           <ListItem disablePadding >
-            <ListItemButton onClick={handleClickOpen}>
+            <ListItemButton >
               <ListItemIcon>
-              <DashboardIcon />
+              <DashboardIcon sx={{color:'white'}}/>
               </ListItemIcon>
               <ListItemText primary="DASHBOARD"  >
-              <Link href="#">Link</Link>
-                  
-              <React.Fragment>
-              <Dialog open={open} onClose={handleClose}>
-                <DialogTitle>Subscribe</DialogTitle>
-                <DialogContent>
-                  <DialogContentText>
-                    To subscribe to this website, please enter your email address here. We
-                    will send updates occasionally.
-                  </DialogContentText>
-                  <TextField
-                    autoFocus
-                    margin="dense"
-                    id="name"
-                    label="Email Address"
-                    type="email"
-                    fullWidth
-                    variant="standard"
-                  />
-                </DialogContent>
-                <DialogActions>
-                  <Button onClick={handleClose}>Cancel</Button>
-                  <Button onClick={handleClose}>Subscribe</Button>
-                </DialogActions>
-              </Dialog>
-            </React.Fragment>
-
-
-                
               </ListItemText>
             </ListItemButton>
           </ListItem>
@@ -69,7 +38,7 @@ export default function BasicList() {
           <ListItem disablePadding>
             <ListItemButton>
               <ListItemIcon>
-                <DraftsIcon />
+                <DraftsIcon sx={{color:'white'}}/>
               </ListItemIcon>
               <ListItemText primary="TRANSACTIONS" />
             </ListItemButton>
@@ -78,7 +47,7 @@ export default function BasicList() {
           <ListItem disablePadding>
             <ListItemButton>
               <ListItemIcon>
-                <PaymentIcon />
+                <PaymentIcon sx={{color:'white'}}/>
               </ListItemIcon>
               <ListItemText primary="CARDS" />
             </ListItemButton>
@@ -87,7 +56,7 @@ export default function BasicList() {
           <ListItem disablePadding>
             <ListItemButton>
               <ListItemIcon>
-                <PaymentIcon />
+                <PaymentIcon sx={{color:'white'}}/>
               </ListItemIcon>
               <ListItemText primary="BANK ACCOUNTS" />
             </ListItemButton>
@@ -96,7 +65,7 @@ export default function BasicList() {
           <ListItem disablePadding>
             <ListItemButton>
               <ListItemIcon>
-                <DraftsIcon />
+                <DraftsIcon sx={{color:'white'}}/>
               </ListItemIcon>
               <ListItemText primary="NOTIFICATIONS" />
             </ListItemButton>
@@ -105,7 +74,7 @@ export default function BasicList() {
           <ListItem disablePadding>
             <ListItemButton>
               <ListItemIcon>
-                <DraftsIcon />
+                <DraftsIcon sx={{color:'white'}}/>
               </ListItemIcon>
               <ListItemText primary="SETTINGS" />
             </ListItemButton>
