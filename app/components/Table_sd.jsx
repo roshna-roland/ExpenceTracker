@@ -36,9 +36,9 @@ export default function BasicTable() {
     const [selectedRow, setSelectedRow] = useState(null);
     const storedData = JSON.parse(localStorage.getItem('rows'));
     const [data, setData] = useState(storedData);
-    const [t,setT]=useState(null);
-    const [s,setS]=useState(null);    
-    const [a,setA]=useState(null);    
+    // const [t,setT]=useState(null);
+    // const [s,setS]=useState(null);    
+    // const [a,setA]=useState(null);    
    
   useEffect(() => {
     const storedData =  JSON.parse(localStorage.getItem('rows'));
@@ -88,12 +88,13 @@ export default function BasicTable() {
   };
 
 
-
+if (storedData)
+{
 
   return (
    
     <div>
-       {data && data.length>0 && (
+      
     <TableContainer component={Paper}>
       <Table sx={{ minWidth: 550 }} aria-label="simple table">
         <TableHead>
@@ -145,8 +146,7 @@ export default function BasicTable() {
         </TableBody>
       </Table>
     </TableContainer>
-  )}
-  {data.length === 0&& <p>no data added</p> }
+
   
     
     <Dialog open={!!selectedRow} onClose={handleClose}>
@@ -207,4 +207,5 @@ export default function BasicTable() {
 
 
 }
-  
+}
+
